@@ -12,6 +12,21 @@ self.addEventListener('install', event => {
   })());
 });
 
+
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    
+   addEventListener("fetch", (event) => {
+  messageClient(event.clientId);
+  event.respondWith(() => {
+    // …
+  });
+});
+  
+  })());
+});
+
+
 self.addEventListener('fetch', event => {
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
