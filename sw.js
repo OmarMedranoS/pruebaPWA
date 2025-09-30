@@ -16,6 +16,8 @@ self.addEventListener('install', event => {
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     
+
+    window.messageClient("Hola soy el service worker que se encarga de escuchar peticiones cuando hay una instalacion")
    addEventListener("fetch", (event) => {
   messageClient(event.clientId);
   event.respondWith(() => {
